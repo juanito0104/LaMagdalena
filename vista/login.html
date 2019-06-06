@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<form action="app/modelo/loguear.php" method="POST">
+    <div class="login-box">
+        <h1>Ingresar</h1>
+        <div class="textbox">
+            <i class="fa fa-user"></i>
+            <input type="text" placeholder="Usuario" name="usuario" value="usuario">
+        </div>
+        <div class="textbox">
+            <i class="fa fa-lock"></i>
+            <input type="password" placeholder="Contraseña" name="password" value="password">
+        </div>
+        <a type="btn btn-succes" value="ENTRAR" href="/app/modelo/loguear.php">Ingresar</a>
+    </div>
+</form>
+</body>
+</html>
