@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario recepciones</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container  col-3 col-7" id="formulario" style="border: 1px solid; border-radius: 10px;">
+    <h1 class="text-center"> REALICE SU RECEPCIÓN</h1>
+    <h2>¡Reserva nuestro espacio para tus eventos!</h2>
+    <form action="datos.php" method="POST">
+        <div class="form-group">
+                <label for="nombre">INGRESE SU NOMBRE:</label> 
+                <input type="text" name="nombrer" class="form-control" maxlength="10" >
+        </div>
+       
+        <div class="form-group">
+            <label for="correo">INGRESE SU CORREO</label>
+            <input type="email" name="correo" class="form-control" maxlength="15">
+        </div>
+        <div class="form-group">
+                <label for="correo">INGRESE EL DIA EN EL QUE QUIERE REALIZAR EL EVENTO:</label>
+                <input type="date" name="fecha" class="font-control" maxlength="20">
+            </div>
+            <div class="form-group">
+                    <label for="correo">INGRESE SU NUMERO DE TELEFONO: </label>
+                    <input type="text" name="numero" class="form-control" maxlength="10" varchar="10">
+                </div>
+        
+        <div class="form-group">
+         <label for="evento">SELECCIONE EL EVENTO A REALIZAR:</label><br>
+          
+                                        <input type="radio" name="evento" > 15 años<br>
+                                         <input type="radio" name="evento" > Fiesta de matrimonio<br>
+                                         <input type="radio" name="evento" > Cumpleaños<br>
+                                         <input type="radio" name="evento" > Bautizo<br>
+                                         <input type="radio" name="evento" > Primera comunion<br>
+                                         <input type="radio" name="evento" > Otra:<br>
+                                         <input type="text" name="evento" class="font-control">  
+        </div>
+    </form>
+    <div class="panel-body text-center">
+        <div class="text-center col-1">
+        <input type="submit"  class="btn btn-primary">
+        </div>
+    </div>
+</div>
+
+</body>
+<link rel="stylesheet" href="../css/bootstrap.css">
+</html>
