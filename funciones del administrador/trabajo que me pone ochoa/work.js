@@ -4,7 +4,7 @@
 
 
 
-var url = "./../controlador/persona.controlador.php";
+var url = "./../controlador/controlador.php";
 
 function consultar (){
     $.ajax({
