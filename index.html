@@ -78,7 +78,7 @@
 						</ul>
 					</li>
 					<li><a href="#contact">Contactanos</a></li>
-					<li><a href="index_admin.html">Iniciar Sesión</a></li>
+					<li><a href="vista/login.html">Iniciar Sesión</a></li>
 				</ul>
 				<!-- /Main navigation -->
 
@@ -125,112 +125,25 @@
 				</div>
 				<!-- /Section header -->
 
-				<style>
-					#panel{
-						background-image: url("img/restaurante/carne_1.jpg");
-						background-repeat: no-repeat;
-						background-size: cover;
-						
-					}
+<table> 
+	<tr>
+		<td>Nombre</td>
+		<td>Precio</td>
+	</tr>
 
-					#box{
-						background-color: #ffffff;
-						opacity: 0.7
-						;
-						filter: alpha(opacity=70);
-					}
-
-					#box h4{
-						font-weight: bold;
-						color: #000000;
-					}
-					
-					
-				</style>
-
-				<div class="col-md-4 col-sm-6">
-						<div class="panel panel-primary">
-								<div class="panel-heading text-center">
-									<i class="fa fa-utensils"></i>  Carnes
-								</div>
-								<div class="panel-body text-center" id="panel">
-									<div id="box">
-										<h4>-Lomo de Res ____________  $18.000 </h4>
-										<h4>-Churrasco _______________  $18.000 </h4>
-										<h4>-Punta de anca __________  $18.000 </h4>
-										<h4>-Tabla Mixta _____________  $18.000 </h4>
-										<h4>-Bandeja Paisa __________  $18.000 </h4>
-										<h4>-Bistec a Caballo ________  $18.000 </h4>
-										<h4>-Costilla ahumada _______  $18.000 </h4>
-										<h4>-Pechuga Gratinada _____  $18.000 </h4>
-										<h4>-Lomo de Cerdo_________  $18.000 </h4>
-										<h4>-Chuleta de Cerdo _______  $18.000 </h4>
-										<h4>-Asado Huilense _________  $18.000 </h4>
-										
-
-									</div>	
-								</div>
-							
-						</div>
-					</div>
-						<style>
-								#panel{
-									background-image: url("img/restaurante/carne_1.jpg");
-									background-repeat: no-repeat;
-									background-size: cover;
-									
-								}
-			
-								#box{
-									background-color: #ffffff;
-									opacity: 0.7
-									;
-									filter: alpha(opacity=70);
-								}
-			
-								#box h4{
-									font-weight: bold;
-									color: #000000;
-								}
-								
-								
-							</style>
-			
-							<div class="col-md-4 col-sm-6">
-									<div class="panel panel-primary">
-											<div class="panel-heading text-center">
-													<i class="fas fa-fish"></i>  Pescado
-											</div>
-											<div class="panel-body text-center" id="panel">
-												<div id="box">
-													<h4>-Mojarra Frita ____________  $18.000 </h4>
-													<h4>-Bagre en Salsa __________ $18.000 </h4>
-													<h4>-Bagre Apanado __________ $18.000 </h4>
-													<h4>-Viudo de Capaz _________$20.000 </h4>
-													<h4>-Viudo de Bocachico ____$20.000 </h4>
-													<h4>-Capaz en Salsa _________ $20.000 </h4>
-													<h4>-Filete de Trucha ________ $18.000 </h4>
-													
-			
-												</div>	
-											</div>
-										
-									</div>		
-				
-				
+	<?php
 	
-				<!-- /service -->
+	$sql="SELECT * from almuerzo";
+	$result=mysqli_query($conexion,$sql);
 
-				<!-- service -->
-				<!-- /service -->
+	while($mostrar=mysqli_fetch_array($result)){
+		?>
+	}
+	
+	
+		
+	</table>
 
-			</div>
-			<!-- /Row -->
-
-		</div>
-		<!-- /Container -->
-
-	</div>
 	<!-- /Service -->
 	<div id="helados" class="section md-padding">
 
