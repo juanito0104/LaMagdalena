@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ofertas</title>
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+</head>
+<body>
+    
+       <div class="container">
+           <div class="card">
+
+            <div class="card-header bg-info">
+                <h3 class="text-white">Promociones</h3>
+            </div>
+
+            
+           <div class="card-body">
+               <input type="hidden" name="idpromociones" id="idpromociones">
+               <div class="row">
+                   <div class="btn-group-sm">
+                       <button class="btn btn-outline-info" onclick="Consultar();"><span class="fa fa-search"></span> consultar</button>
+                       <button class="btn btn-outline-info" onclick="guardar();"><span class="fa fa-save"></span> cguardar</button>
+                       <button class="btn btn-outline-info" onclick="modificar();"><span class="fa fa-pencil-alt"></span> modificar</button>
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-md-6">
+                        <label for="nombredepromocion">Nombre:</label>
+                        <input type="text" name="nombredepromocion" id="nombredepromocion" placeholder="Por favor ingrese el nombre de la promoción" class="form-control">
+                   </div>
+                   <div class="col-md-6">
+                        <label for="contenido">Contenido</label>
+                        <input type="text" name="cont" id="cont" placeholder="ingrese el contenido de su oferta" class="form-control">     
+                   </div>
+               </div>
+               <div class="row">
+                    <div class="col-md-6">
+                            <label for="Precio">Precio</label>
+                            <input type="text" name="precio" id="precio" placeholder="Ingrese el precio de la promocion"class="form-control">
+                       </div>
+                
+               </div>
+           </div>
+       
+ 
+        <div class="card-footers"></div>
+           <table class="table table-striped">
+               <thead>
+                   <tr>
+                       <th>Nombre</th>
+                       <th>Contenido</th>
+                       <th>Precio</th>
+                       <th>Acciones</th>
+                       
+                   </tr>
+               </thead>
+               <tbody id="datos">
+
+               </tbody>
+           </table>
+           </div>
+</div>
+          
+
+
+</body>
+
+<script src="../assets/js/all.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jQuery.js"></script>
+<script src="../js/prom.js"></script>
+</html>
