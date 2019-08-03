@@ -17,8 +17,8 @@ function consultar (){
             html +="<td>"+ data.contenido+"</td>";
             html +="<td>"+ data.precio+"</td>";
             html +="<td>";
-            html +="<button class='btn btn-waring' onclick='ConsultarPorId("+ data.idpromocion + ");'><span class ='fa fa-edit'></span>modificar</button>"
-            html +="<button class='btn btn-danger' onclick='Eliminar("+ data.idpromocion + ");'><span class ='fa fa-trash'></span>Eliminar</button>"
+            html +="<button class='btn btn-waring' onclick='ConsultarPorId("+ data.idpromociones + ");'><span class ='fa fa-edit'></span>modificar</button>"
+            html +="<button class='btn btn-danger' onclick='Eliminar("+ data.idpromociones + ");'><span class ='fa fa-trash'></span>Eliminar</button>"
             html +="</td>";
             html += "</tr>";
        });
@@ -45,7 +45,7 @@ function ConsultarPorId(idpromociones){
         document.getElementById('nombres').value = response.nombres;
         document.getElementById('contenido').value = response.contenido;
         document.getElementById('precio').value = response.precio;
-        document.getElementById('idpromociones').value = response.promociones ;
+        document.getElementById('idpromociones').value = response.idpromociones ;
 
     }).fail(function(response){
         console.log(response);
@@ -88,7 +88,7 @@ function modificar(){
     });
 }
 
-function eliminar(idnombre){
+function eliminar(idpromociones){
     $.ajax({
         url: url,
         data: {"idpromociones": idpromociones, "accion": "ELIMINAR"},
