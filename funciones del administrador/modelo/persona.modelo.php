@@ -10,10 +10,10 @@ class Promocion{
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
     
-    public function ConsultarPorId($idPromociones){
+    public function ConsultarPorId($idpromociones){
         $conexion = new Conexion();
-        $stmt = $conexion->prepare("SELECT * FROM promociones WHERE idpromociones = :idPromociones");
-        $stmt->bindValue(":idPromociones", $idPromociones, PDO::PARAM_INT);
+        $stmt = $conexion->prepare("SELECT * FROM promociones WHERE idpromociones = :idpromociones");
+        $stmt->bindValue(":idpromociones", $idpromociones, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_OBJ);
     }
@@ -24,10 +24,10 @@ class Promocion{
             `nombredepromocion`, 
             `contenido`, 
             `precio`) 
-            VALUES (':nombrePromocion',
+            VALUES (':nombredepromocion',
             ':contenido',
             ':precio')");
-            $stmt->bindValue(":nombrePromocion", $nombres, PDO::PARAM_STR);
+            $stmt->bindValue(":nombredepromocion", $nombres, PDO::PARAM_STR);
             $stmt->bindValue(":contenido", $contenido, PDO::PARAM_STR);
             $stmt->bindValue(":precio", $precio, PDO::PARAM_STR);
             
@@ -38,7 +38,7 @@ class Promocion{
                 
             }
         }
-        public function Modificar( $idPromociones , $nombres , $contenido , $precio ){
+        public function Modificar( $idpromociones , $nombres , $contenido , $precio ){
             
             $conexion = new Conexion();
             $stmt = $conexion->prepare("UPDATE `promociones` 
@@ -46,12 +46,12 @@ class Promocion{
             `contenido`= :contenido,
             `precio`= :precio
             
-            WHERE idpromocion= :idPromocion;
+            WHERE idpromociones= :idpromociones;
             ");
             $stmt->bindValue(":nombredepromocion", $nombres, PDO::PARAM_STR);
             $stmt->bindValue(":contenido", $contenido, PDO::PARAM_STR);
             $stmt->bindValue(":precio", $precio, PDO::PARAM_STR);
-            $stmt->bindValue(":idPromocion", $idPromociones, PDO::PARAM_INT);
+            $stmt->bindValue(":idpromociones", $idpromociones, PDO::PARAM_INT);
             
             if($stmt->execute()){
                 return "OK";
@@ -61,11 +61,11 @@ class Promocion{
             }
         }
         
-        public function Eliminar ( $idPromociones ){
+        public function Eliminar ( $idpromociones ){
             
             $conexion = new Conexion();
-            $stmt = $conexion->prepare("DELETE FROM promociones WHERE idpromocion = idPromocion ");
-            $stmt->bindValue(":idPromocion", $idPromociones, PDO::PARAM_INT);
+            $stmt = $conexion->prepare("DELETE FROM promociones WHERE idpromociones = idpromociones ");
+            $stmt->bindValue(":idpromociones", $idpromociones, PDO::PARAM_INT);
             
             if($stmt->execute()){
                 return "OK";

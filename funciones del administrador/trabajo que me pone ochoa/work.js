@@ -1,6 +1,6 @@
 var url = "./../controlador/controlador.php";
 
-function consultar (){
+function consultar (idpromociones){
     $.ajax({
         url: url,
         data: {"accion":"CONSULTAR"},
@@ -54,7 +54,7 @@ function ConsultarPorId(idpromociones){
 
 }
 
-function guardar(){
+function guardar(idpromcociones){
     $.ajax({
         url: url,
         data: retornarDatos("GUARDAR"),
@@ -71,7 +71,7 @@ function guardar(){
     });
 }
 
-function modificar(){
+function modificar(idpromociones){
     $.ajax({
         url: url,
         data:  retornarDatos("MODIFICAR"),
@@ -107,7 +107,7 @@ function eliminar(idpromociones){
 
 }
 
-function validar(){
+function validar(idpromociones){
     
     nombres = document.getElementById('nombres').value;
     contenido = document.getElementById('contenido').value;
