@@ -27,7 +27,7 @@ if(mysqli_num_rows($stmt) > 0){
     echo "
         <script>
             alert('Sesión iniciada con éxito');
-            window.location = '../../vista/login.html';
+            window.location = '../../index_admin.html';
         </script>
     ";
 }else{
