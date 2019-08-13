@@ -1,9 +1,3 @@
-
-
-
-
-
-
 var url = "./../controlador/controlador.php";
 
 function consultar (){
@@ -11,26 +5,25 @@ function consultar (){
         url: url,
         data: {"accion":"CONSULTAR"},
         type:'POST',
-        datatype: 'json'
+        dataType: 'json'
 
     }).done(function(response){
         var html = "";
 
        $.each( response, function(index, data){
-            html +="tr";
+            html +="<tr>";
 
             html +="<td>"+ data.nombres+"</td>";
             html +="<td>"+ data.contenido+"</td>";
             html +="<td>"+ data.precio+"</td>";
-            html +="<td>"+data.acciones+"</td>";
             html +="<td>";
+            html +="<button class='btn btn-waring' onclick='ConsultarPorId("+ data.idpromocion + ");'><span class ='fa fa-edit'></span>modificar</button>"
+            html +="<button class='btn btn-danger' onclick='Eliminar("+ data.idpromocion + ");'><span class ='fa fa-trash'></span>Eliminar</button>"
             html +="</td>";
-            html +="<button class='btn btn-waring' onclick='consultarporid("+data.idpromocion +");'><span class ='fa fa-edit'></span>modificar</button>"
-            html +="<button class='btn btn-danger' onclick='Eliminar("+data.idpromocion +");'><span class ='fa fa-trash'></span>Eliminar</button>"
-            html += "/<tr>";
+            html += "</tr>";
        });
 
-       document.getElementById("datos").inerrHTML = httml;
+       document.getElementById("datos").inerrHTML = html;
 
         
 
@@ -41,18 +34,18 @@ function consultar (){
 
 }
 
-function consultarporid(nombre){
+function ConsultarPorId(idpromociones){
     $.ajax({
         url: url,
-        data: {"idpromocion " : idpromocion, "accion" : "COMSULTAR_ID"},
+        data: {"idpromociones " : idpromociones, "accion" : "COMSULTAR_ID"},
         type: 'POST',
         dataType:'json'
 
     }).done(function(response){
-        documen.getElementById('nombres').value = response.nombres;
-        documen.getElementById('contenido').value = response.contenido;
-        documen.getElementById('precio').value = response.precio;
-        documen.getElementById('acciones').value = response.acciones ;
+        document.getElementById('nombres').value = response.nombres;
+        document.getElementById('contenido').value = response.contenido;
+        document.getElementById('precio').value = response.precio;
+        document.getElementById('idpromociones').value = response.promociones ;
 
     }).fail(function(response){
         console.log(response);
@@ -62,31 +55,80 @@ function consultarporid(nombre){
 }
 
 function guardar(){
-
+    $.ajax({
+        url: url,
+        data: retornarDatos("GUARDAR"),
+        type: 'POST',
+        dataType: 'json'
+    }).done(function(response){
+        if(response == "OK"){
+            alert("Datos Guardados Con ÉXITO")
+        }else{
+            alert(response);
+        }
+    }).fail(function(response){
+        console.log(response)
+    });
 }
 
 function modificar(){
-
+    $.ajax({
+        url: url,
+        data:  retornarDatos("MODIFICAR"),
+        type: 'POST',
+        dataType: 'json'
+    }).done(function(response){
+        if(response == "OK"){
+            alert("Datos Guardados Con ÉXITO")
+        }else{
+            alert(response);
+        }
+    }).fail(function(response){
+        console.log(response)
+    });
 }
 
 function eliminar(idnombre){
+    $.ajax({
+        url: url,
+        data: {"idpromociones": idpromociones, "accion": "ELIMINAR"},
+        type: 'POST',
+        dataType: 'json'
+    }).done(function(response){
+        if(response == "OK"){
+            alert("Datos Borrados Con Éxtito")
+        }else{
+            alert(response)
+        }
+    }).fail(function(response){
+        console.log(response)
+    });
+
 
 }
 
 function validar(){
     
-    nombres = documen.getElementById('nombres').value;
-    contenido = documen.getElementById('contenido').value;
-    precio = documen.getElementById('precio').value;
-    acciones = documen.getElementById('acciones').value;
-
-    if(nombres == "" || contenido == "" || precio == "" || acciones == "" ){
+    nombres = document.getElementById('nombres').value;
+    contenido = document.getElementById('contenido').value;
+    precio = document.getElementById('precio').value;
+    
+    if(nombres == "" || contenido == "" || precio == ""){
         return false
     }
     return true;
    
 }
 
+function retornarDatos(accion){
 
+    return{
+    "nombres" : document.getElementById('nombres').value,
+    "contenido" : document.getElementById('contenido').value,
+    "precio" : document.getElementById('precio').value,
+    "accion": accion,
+    "idpromociones": document.getElementById(idpromociones).value
+    }
+} 
 
 
