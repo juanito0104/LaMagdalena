@@ -24,20 +24,20 @@ class Promocion{
             `nombredepromocion`, 
             `contenido`, 
             `precio`) 
-            VALUES (':nombredepromocion',
-            ':contenido',
-            ':precio')");
-            $stmt->bindValue(":nombredepromocion", $nombres, PDO::PARAM_STR);
-            $stmt->bindValue(":contenido", $contenido, PDO::PARAM_STR);
-            $stmt->bindValue(":precio", $precio, PDO::PARAM_STR);
+            VALUES (:nombredepromocion,
+            :contenido,
+            :precio)");
+        $stmt->bindValue(":nombredepromocion", $nombres, PDO::PARAM_STR);
+        $stmt->bindValue(":contenido", $contenido, PDO::PARAM_STR);
+        $stmt->bindValue(":precio", $precio, PDO::PARAM_STR);
             
-            if($stmt->execute()){
-                return "OK";
-            }else{
-                return "Error: se ha generado un error al guardar la informacion";
-                
-            }
+        if($stmt->execute()){
+            return "OK";
+        }else{
+            return "Error: se ha generado un error al guardar la informacion";
+            
         }
+    }
         public function Modificar( $idpromociones , $nombres , $contenido , $precio ){
             
             $conexion = new Conexion();

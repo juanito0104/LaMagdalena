@@ -2,9 +2,9 @@
 
 class conexion extends PDO{
 
-    public function _construt(){
+    public function __construct(){
         try{
-            parent:: _construt("mysql:host=localhost;dbname=restaurante" , "root" , "");
+            parent:: __construct("mysql:host=localhost;dbname=restaurante" , "root" , "");
             parent::exec("set names utf8");
         }catch(PDOException $e){
             echo "Error al conectar" . $e->getMessage();

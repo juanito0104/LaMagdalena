@@ -54,7 +54,7 @@ function ConsultarPorId(idpromociones){
 
 }
 
-function guardar(idpromcociones){
+function guardar(){
     $.ajax({
         url: url,
         data: retornarDatos("GUARDAR"),
@@ -121,13 +121,12 @@ function validar(idpromociones){
 }
 
 function retornarDatos(accion){
-
     return{
-    "nombres" : document.getElementById('nombres').value,
-    "contenido" : document.getElementById('contenido').value,
-    "precio" : document.getElementById('precio').value,
-    "accion": accion,
-    "idpromociones": document.getElementById(idpromociones).value
+        "nombres" : document.getElementById('nombredepromocion').value,
+        "contenido" : document.getElementById('cont').value,
+        "precio" : document.getElementById('precio').value,
+        "accion": accion,
+        "idpromociones": document.getElementById("idpromociones").value
     }
 } 
 
