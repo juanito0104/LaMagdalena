@@ -1,6 +1,12 @@
+<?php
+
+	$conexion=mysqli_connect('localhost', 'root', '', 'restaurante');
+	mysqli_query($conexion, "SET NAMES 'utf8'");
+?>
+
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 	<!--HOLA NIÑOS YNIÑAS-->
@@ -127,11 +133,35 @@
 					</div>
 					<!-- /Section header -->
 					
-					<table> 
+					<table class="table table-striped table-responsive" id="almuerzo"> 
 						<tr>
+							<td>#</td>
 							<td>Nombre</td>
 							<td>Precio</td>
 						</tr>
+
+						<?php
+
+						$sql="SELECT * from almuerzo";
+						$result=mysqli_query($conexion,$sql);
+
+						while($mostrar=mysqli_fetch_array($result)){
+
+						
+
+						?>
+
+						<tr>
+							<td><?php echo $mostrar['idalmuerzo'] ?></td>
+							<td><?php echo $mostrar['nombrealmuerzo'] ?></td>
+							<td><?php echo $mostrar['valor'] ?></td>							
+						</tr>
+					<?php 
+					
+					}
+					
+					?>
+					</table>
 						<style>
 							#box h4{
 								font-weight: bold;
@@ -142,8 +172,6 @@
 						</style>
 						
 						<table class="table table-striped">
-							
-							<the></thead>
 								
 							</table>
 							<!-- /Service -->
@@ -161,111 +189,35 @@
 										</div>
 										<!-- /Section header -->
 										
-										<style>
-											#panel_1{
-												background-image: url("img/restaurante/carne_1.jpg");
-												background-repeat: no-repeat;
-												background-size: cover;
-												
-											}
-											
-											#box{
-												background-color: #ffffff;
-												opacity: 0.7
-												;
-												filter: alpha(opacity=70);
-											}
-											
-											#box h4{
-												font-weight: bold;
-												color: #000000;
-											}
-											
-											
-										</style>
-										
-										<div class="col-md-6 col-sm-6">
-											<div class="panel panel-primary">
-												<div class="panel-heading text-center">
-													<i class="fa fa-ice-cream"></i>  Helados
-												</div>
-												<div class="panel-body text-center" id="panel_1">
-													<div id="box">
-														<h4>-Helado con galleta_______  $5.000 </h4>
-														<h4>-Payaso con helado_______  $6.000 </h4>
-														<h4>-Helado Festival___________  $5.000 </h4>
-														<h4>-Fresas con helado________  $5.000 </h4>
-														<h4>-Banana con helado ______  $7.000 </h4>
-														<h4>-Helado Mickey ___________  $3.500 </h4>
-														<h4>-Helado con Brownie______  $8.000 </h4>										
-														<h4>-Ensalada de frutas_______  $8.000 </h4>
-														
-														
-													</div>	
-												</div>
-												
-											</div>
-										</div>
-										<style>
-											#panel_1{
-												background-image: url("img/restaurante/helado_1.jpg");
-												background-repeat: no-repeat;
-												background-size: cover;
-												
-											}
-											
-											#panel_2{
-												background-image: url("img/restaurante/hamburguesa_1.jpg");
-												background-repeat: no-repeat;
-												background-size: cover;
-												
-											}
-											
-											#box{
-												background-color: #ffffff;
-												opacity: 0.7
-												;
-												filter: alpha(opacity=70);
-											}
-											
-											#box h4{
-												font-weight: bold;
-												color: #000000;
-											}
-											
-											
-										</style>
-										
-										<div class="col-md-6 col-sm-6">
-											<div class="panel panel-primary">
-												<div class="panel-heading text-center">
-													<i class="fas fa-hamburger"></i>  Comida Rápida
-												</div>
-												<div class="panel-body text-center" id="panel_2">
-													<div id="box">
-														<h4>-Hamburguesa ___________  $8.000 </h4>
-														<h4>-Hot Dog _________________ $5.000 </h4>
-														<h4>-Sandwich ________________ $8.000 </h4>
-														<h4>-Salchipapa _______________ $8.000 </h4>
-														<h4>-Ceviche __________ $6.000 / $9.000 </h4>
-														<h4>-Malteadas ________________ $5.000 </h4>
-														<h4>-Jugos en Leche __________ $4.000 </h4>
-														
-														
-													</div>	
-												</div>
-												
-											</div>		
-											
-											
-											
-											<!-- /service -->
-											
-											<!-- service -->
-											<!-- /service -->
-											
-										</div>
-										<!-- /Row -->
+							<table class="table table-striped table-responsive"> 
+							<tr>
+								<td>#</td>
+								<td>Nombre</td>
+								<td>Precio</td>
+							</tr>
+
+							<?php
+
+								$sql="SELECT * from heladeria";
+								$result=mysqli_query($conexion,$sql);
+
+								while($mostrar=mysqli_fetch_array($result)){
+
+			
+
+							?>
+
+							<tr>
+								<td><?php echo $mostrar['idheladeria'] ?></td>
+								<td><?php echo $mostrar['nombredelhelado'] ?></td>
+								<td><?php echo $mostrar['valor'] ?></td>							
+							</tr>
+							<?php 
+		
+							}
+		
+							?>
+							</table>
 										
 									</div>
 									<!-- /Container -->
