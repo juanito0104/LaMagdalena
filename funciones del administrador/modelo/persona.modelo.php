@@ -64,7 +64,7 @@ class Promocion{
         public function Eliminar ( $idpromociones ){
             
             $conexion = new Conexion();
-            $stmt = $conexion->prepare("DELETE FROM promociones WHERE idpromociones = idpromociones ");
+            $stmt = $conexion->prepare("DELETE FROM promociones WHERE idpromociones = :idpromociones ");
             $stmt->bindValue(":idpromociones", $idpromociones, PDO::PARAM_INT);
             
             if($stmt->execute()){

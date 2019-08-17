@@ -1,6 +1,6 @@
 var url = "./../controlador/controlador.php";
 
-function consultar (idpromociones){
+function Consultar (){
     $.ajax({
         url: url,
         data: {"accion":"CONSULTAR"},
@@ -13,22 +13,22 @@ function consultar (idpromociones){
        $.each( response, function(index, data){
             html +="<tr>";
 
-            html +="<td>"+ data.nombres+"</td>";
+            html +="<td>"+ data.nombredepromocion+"</td>";
             html +="<td>"+ data.contenido+"</td>";
             html +="<td>"+ data.precio+"</td>";
             html +="<td>";
-            html +="<button class='btn btn-waring' onclick='ConsultarPorId("+ data.idpromociones + ");'><span class ='fa fa-edit'></span>modificar</button>"
+            html +="<button class='btn btn-warning' onclick='ConsultarPorId("+ data.idpromociones + ");'><span class ='fa fa-edit'></span>modificar</button>"
             html +="<button class='btn btn-danger' onclick='Eliminar("+ data.idpromociones + ");'><span class ='fa fa-trash'></span>Eliminar</button>"
             html +="</td>";
             html += "</tr>";
        });
 
-       document.getElementById("datos").inerrHTML = html;
+       document.getElementById("datos").innerHTML = html;
 
         
 
     }).fail(function (response){
-        console.log(reponse);
+        console.log(response);
 
     });
 
@@ -37,13 +37,13 @@ function consultar (idpromociones){
 function ConsultarPorId(idpromociones){
     $.ajax({
         url: url,
-        data: {"idpromociones " : idpromociones, "accion" : "COMSULTAR_ID"},
+        data: {"idpromociones" : idpromociones, "accion" : "CONSULTAR_ID"},
         type: 'POST',
         dataType:'json'
 
     }).done(function(response){
-        document.getElementById('nombres').value = response.nombres;
-        document.getElementById('contenido').value = response.contenido;
+        document.getElementById('nombredepromocion').value = response.nombredepromocion;
+        document.getElementById('cont').value = response.contenido;
         document.getElementById('precio').value = response.precio;
         document.getElementById('idpromociones').value = response.idpromociones ;
 
@@ -71,7 +71,7 @@ function guardar(){
     });
 }
 
-function modificar(idpromociones){
+function modificar(){
     $.ajax({
         url: url,
         data:  retornarDatos("MODIFICAR"),
@@ -88,7 +88,7 @@ function modificar(idpromociones){
     });
 }
 
-function eliminar(idpromociones){
+function Eliminar(idpromociones){
     $.ajax({
         url: url,
         data: {"idpromociones": idpromociones, "accion": "ELIMINAR"},
@@ -109,7 +109,7 @@ function eliminar(idpromociones){
 
 function validar(idpromociones){
     
-    nombres = document.getElementById('nombres').value;
+    nombres = document.getElementById('nombredepromocion').value;
     contenido = document.getElementById('contenido').value;
     precio = document.getElementById('precio').value;
     

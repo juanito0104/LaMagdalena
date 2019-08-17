@@ -20,15 +20,15 @@ if($_POST){
             echo json_encode($respuesta);
         break;
         case "MODIFICAR";
-            $nombre = $_POST["nombre"];
+            $nombre = $_POST["nombres"];
             $contenido = $_POST["contenido"];
             $precio = $_POST["precio"];
-            $idPromocion = $_POST["idpromociones"];
-            $promocion->Modificar($idPromociones, $nombre, $contenido, $precio);
+            $idpromociones = $_POST["idpromociones"];
+            $respuesta = $promocion->Modificar($idpromociones, $nombre, $contenido, $precio);
             echo json_encode($respuesta);
         break;
         case "ELIMINAR";
-            $idPromocion = $_POST["idpromociones"];
+            $idpromociones = $_POST["idpromociones"];
             $respuesta = $promocion->Eliminar($idpromociones);
         break;
     }
