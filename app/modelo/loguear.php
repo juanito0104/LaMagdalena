@@ -27,14 +27,14 @@ if(mysqli_num_rows($stmt) > 0){
     echo "
         <script>
             alert('Sesión iniciada con éxito');
-            window.location = '../../index_admin.html';
+            window.location = '../../index_admin.php';
         </script>
     ";
 }else{
     echo "
         <script>
             alert('Usuario no existe');
-            window.location = '../../vista/login.html';
+            window.location = '../../vista/login.php';
         </script>
     ";
 }
