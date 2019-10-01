@@ -49,7 +49,7 @@
 		<!-- Header -->
 		<header id="home">
 			<!-- Background Image -->
-			<div class="bg-img" style="background-image: url('./img/restaurante/fondo.jpg');">
+			<div class="bg-img" style="background-image: url('img/restaurante/fondo.jpg');">
 				<div class="overlay"></div>
 			</div>
 			<!-- /Background Image -->
@@ -102,7 +102,7 @@
 						<!-- home content -->
 						<div class="col-md-10 col-md-offset-1">
 							<div class="home-content">
-								<u><h1 class="white-text zoom-in" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ">Bienvenido al restaurante "La Magdalena"</h1></u>
+								<u><h1 class="white-text" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ">Bienvenido al restaurante "La Magdalena"</h1></u>
 								<h2 class="white-text" style="font-family:initial ">Deliciosas comidas hechas en leña
 								</h2>
 								
@@ -133,7 +133,7 @@
 					</div>
 					<!-- /Section header -->
 					
-					<table class="table table-striped table-responsive" id="almuerzo"> 
+					<table class="table table-striped table-responsive text-center" id="almuerzo"> 
 						<tr>
 							<td>#</td>
 							<td>Nombre</td>
@@ -420,8 +420,7 @@
 							<script type="text/javascript" src="js/owl.carousel.min.js"></script>
 							<script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
 							<script type="text/javascript" src="js/main.js"></script>
-							<script src="js/all.js"></script>
-							<link rel="stylesheet" href="vista/estilo.css">
+							<script src="js/all.js"></script>							
 						</body>
 						
 						</html>
